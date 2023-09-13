@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>House Price Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+		label {
+		  display: block;
+		}
+       body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+        <h1>House Price Predictor</h1>
+        <h2>Enter the house details:</h2>
+        <form id="prediction-form" action="{{ url_for('predict') }}" method="post">
+            <label for="City">City:</label>
+            <input type="text" id="City" name="City" placeholder="Enter city" required><br><br>
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" placeholder="Enter type" required><br><br>
+            <label for="room_number">Number of rooms:</label>
+            <input type="number" id="room_number" name="room_number" placeholder="Enter number of rooms" required><br><br>
+            <label for="Area">Area (in square feet):</label>
+            <input type="number" id="Area" name="Area" placeholder="Enter area" required><br><br>
+            <label for="Street">Street:</label>
+            <input type="text" id="Street" name="Street" placeholder="Enter street" required><br><br>
+			<label for="number_in_street">Number in Street:</label>
+            <input type="text" id="number_in_street" name="number_in_street" placeholder="Enter Number in street" required><br><br>
+            <label for="city_area">City area:</label>
+            <input type="text" id="city_area" name="city_area" placeholder="Enter city area" required><br><br>
+            <label for="num_of_images">Number of images:</label>
+            <input type="number" id="num_of_images" name="num_of_images" placeholder="Enter number of images" required><br><br>
+			<label for="floor">Floor:</label>
+            <input type="text" id="floor" name="floor" placeholder="Enter floor" required><br><br>
+            <label for="total_floors">Total Floors:</label>
+            <input type="text" id="total_floors" name="total_floors" placeholder="Enter total floors" required><br><br>
+            <label for="hasElevator">Has elevator:</label>
+            <select id="hasElevator" name="hasElevator" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="hasParking">Has parking:</label>
+            <select id="hasParking" name="hasParking" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="hasBars">Has bars:</label>
+            <select id="hasBars" name="hasBars" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="hasStorage">Has storage:</label>
+            <select id="hasStorage" name="hasStorage" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="condition">Condition:</label>
+            <input type="text" id="condition" name="condition" placeholder="Enter condition" required><br><br>
+            <label for="hasAirCondition">Has air conditioning:</label>
+            <select id="hasAirCondition" name="hasAirCondition" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="hasBalcony">Has balcony:</label>
+            <select id="hasBalcony" name="hasBalcony" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="haMamad">Has mamad:</label>
+            <select id="hasMamad" name="hasMamad" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="handicapFriendly">Handicap friendly:</label>
+            <select id="handicapFriendly" name="handicapFriendly" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+            <label for="entrance_date">Entrance date:</label>
+            <input type="date" id="entrance_date" name="entrance_date" required><br><br>
+            <label for="furniture">Furniture:</label>
+            <input type="text" id="furniture" name="furniture" placeholder="Enter furniture" required><br><br>
+            <label for="publishedDays">Published days:</label>
+            <input type="number" id="publishedDays" name="publishedDays" placeholder="Enter published days" required><br><br>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" placeholder="Enter description" required><br><br>
+            <button type="submit" class="btn btn-primary px-5">Predict</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
